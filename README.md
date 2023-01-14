@@ -23,3 +23,5 @@ exit
 exit
 ./vendor/bin/sail php artisan migrate
 ```
+После развертывания сервис можно останавливать и запускать  
+с помощью команд `./vendor/bin/sail down` и `./vendor/bin/sail up`
