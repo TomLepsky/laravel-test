@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "8dee15ac-3340-40dd-b9c2-6ac55ac7f8b1",
+		"name": "laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15362097"
+	},
+	"item": [
+		{
+			"name": "register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tom\",\r\n    \"email\": \"mail@mail.com\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_uri}}auth/register",
+					"host": [
+						"{{base_uri}}auth"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"mail@mail.com\",\r\n    \"password\":\"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_uri}}auth/login",
+					"host": [
+						"{{base_uri}}auth"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/download/123.jpg"
+						},
+						{
+							"key": "data",
+							"value": "{\"name\":\"myfile.jpeg\", \"folder\":\"newfolder\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_uri}}upload",
+					"host": [
+						"{{base_uri}}upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create folder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"folder\":\"myfolder\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_uri}}create-folder",
+					"host": [
+						"{{base_uri}}create-folder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete file",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_uri}}delete/18",
+					"host": [
+						"{{base_uri}}delete"
+					],
+					"path": [
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rename file",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"newName\":\"newfile.jpeg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_uri}}rename/16",
+					"host": [
+						"{{base_uri}}rename"
+					],
+					"path": [
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_uri}}download/14",
+					"host": [
+						"{{base_uri}}download"
+					],
+					"path": [
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_uri}}list",
+					"host": [
+						"{{base_uri}}list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "size file",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_uri}}size/newfolder",
+					"host": [
+						"{{base_uri}}size"
+					],
+					"path": [
+						"newfolder"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "24|WgAp7zWxu3jYBwvTMgA2iuMQkiGUREJ9eQOkDfMt",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_uri",
+			"value": "localhost/api/"
+		}
+	]
+}
