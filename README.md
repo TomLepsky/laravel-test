@@ -17,8 +17,8 @@ docker run --rm -it -v "$(pwd):/app" composer/composer install
 ```
 docker exec -ti laravel-test_mysql_1 bash
 mysql
-GRANT ALL ON *.* TO 'sail'@'%' WITH GRANT OPTION;
 CREATE USER 'sail'@'%' IDENTIFIED BY 'password';
+GRANT ALL ON *.* TO 'sail'@'%' WITH GRANT OPTION;
 exit
 exit
 ./vendor/bin/sail php artisan migrate
