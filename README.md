@@ -22,6 +22,11 @@ GRANT ALL ON *.* TO 'sail'@'%' WITH GRANT OPTION;
 exit
 exit
 ./vendor/bin/sail php artisan migrate
+```  
+*В случае ошибки прав доступа на запись выполнить*  
 ```
+chmod -R 777 /laravel-test
+```
+
 После развертывания сервис можно останавливать и запускать  
 с помощью команд `./vendor/bin/sail down` и `./vendor/bin/sail up`
