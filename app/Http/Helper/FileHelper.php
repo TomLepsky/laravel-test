@@ -101,8 +101,7 @@ class FileHelper
      */
     public static function isExceededLimit(int $userId, int $fileSize) : bool
     {
-        return FileRepository::getFilesSize($userId) + $fileSize > 1;
-//        return FileRepository::getFilesSize($userId) + $fileSize > 104857600;
+        return FileRepository::getFilesSize($userId) + $fileSize > 104857600;
     }
 
     /**
