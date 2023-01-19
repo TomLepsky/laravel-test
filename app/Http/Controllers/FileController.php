@@ -8,7 +8,6 @@ use App\Http\Repository\FileRepository;
 use App\Policies\FilePolicy;
 use App\Rules\FileLimit;
 use App\Rules\NotPHP;
-use Illuminate\Auth\Access\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -189,15 +188,17 @@ class FileController extends Controller
     }
 
     /**
-     * show all user's files
+     * show all user's files and directories
      *
      * @param Request $request
      * @return JsonResponse
      */
     public function list(Request $request) : JsonResponse
     {
-        $files = FileRepository::getAllUserFiles($request->user()->id);
-        return ApiHelper::response(200, [$files]);
+        $userId = $request->user()->id;
+        $files = FileRepository::getAllUserFiles($userId);
+        $dirs = FileRepository::getAllUserDirs($userId);
+        return ApiHelper::response(200, ['files' => $files, 'directories' => $dirs]);
     }
 
     /**
